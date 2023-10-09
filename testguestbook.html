@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>hong</title>
+  </head>
+
+  <body>
+    <div
+      class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5"
+      tabindex="-1"
+      role="dialog"
+      id="modalSheet"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+          <div class="modal-header border-bottom-0">
+            <h1 class="modal-title fs-4">방명록</h1>
+          </div>
+          <input type="text" id="writer" placeholder="작성자" />
+          <textarea
+            id="writing"
+            rows="4"
+            cols="80"
+            placeholder="내용"
+          ></textarea
+          ><br />
+          <div
+            class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0"
+          >
+            <button id="btn" type="button" class="btn btn-lg btn-primary">
+              방명록 남기기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
