@@ -14,8 +14,8 @@
         background-color: gainsboro;
       }
 
-      .guestbook {
-        width: 50%;
+      .aroundbox {
+        width: 40%;
         padding: 20px;
         box-shadow: 0px 0px 5px 0px black;
         border-radius: 5px;
@@ -23,7 +23,7 @@
       }
 
       .guestname {
-        width: 80px;
+        width: 60%;
         height: 89%;
         /* text-align: center; */
       }
@@ -52,39 +52,21 @@
         let content = $("#content").val();
 
         let temp_html = `
-        <div class="headtitle">
-      <h1 onclick="closebtn()">방명록</h1>
-    </div>
-    <div class="all" id="all">
-      <div class="guestbook">
+        <div class='aroundbox'>
         <div class="guestname">
-          <input
-            type="text"
-            class="guestname"
-            id="guestname"
-            placeholder="작성자"
-          />
-          <label for="floatingInput"></label>
+           <p class='guestname' type='text'>작성자:${guestname}</p>        
         </div>
         <div class="contentform">
-          <input type="text" class="content" id="content" placeholder="내용" />
-          <label for="floatingInput"></label>
-          <div class="mybtn">
-            <button onclick="postingbtn()" type="button" class="btn btn-dark">
-              기록하기
-            </button>
-            <button
-              onclick="closebtn()"
-              type="button"
-              class="btn btn-outline-dark"
-            >
-              닫기
-            </button>
-          </div>
+           <p class='guestname'> 내용:${content}</p>
+        </div>     
         </div>
-      </div>
-    </div>`;
-        $("#guestbook").append(temp_html);
+    `;
+
+        $("#all").append(temp_html);
+
+        // 입력 필드 초기화
+        $("#guestname").val("");
+        $("#content").val("");
       }
     </script>
   </head>
@@ -94,32 +76,39 @@
       <h1 onclick="closebtn()">방명록</h1>
     </div>
     <div class="all" id="all">
-      <div class="guestbook">
-        <div class="guestname">
-          <input
-            type="text"
-            class="guestname"
-            id="guestname"
-            placeholder="작성자"
-          />
-          <label for="floatingInput"></label>
-        </div>
-        <div class="contentform">
-          <input type="text" class="content" id="content" placeholder="내용" />
-          <label for="floatingInput"></label>
-          <div class="mybtn">
-            <button onclick="postingbtn()" type="button" class="btn btn-dark">
-              기록하기
-            </button>
-            <button
-              onclick="closebtn()"
-              type="button"
-              class="btn btn-outline-dark"
-            >
-              닫기
-            </button>
+      <div class="aroundbox" id="aroundbox">
+        <div class="guestbook" id="guestbook">
+          <div class="guestname">
+            <input
+              type="text"
+              class="guestname"
+              id="guestname"
+              placeholder="작성자"
+            />
+            <label for="floatingInput"></label>
           </div>
-        </div>
+          <div class="contentform">
+            <input
+              type="text"
+              class="content"
+              id="content"
+              placeholder="내용"
+            />
+            <label for="floatingInput"></label>
+            <div class="mybtn">
+              <button onclick="postingbtn()" type="button" class="btn btn-dark">
+                기록하기
+              </button>
+              <button
+                onclick="closebtn()"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        </divㅅ>
       </div>
     </div>
   </body>
