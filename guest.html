@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+      * {
+        font-family: "Gowun Dodum", sans-serif;
+        background-color: gainsboro;
+      }
+      .guestbook {
+        width: 25%;
+        padding: 20px;
+        box-shadow: 0px 0px 5px 0px black;
+        border-radius: 5px;
+        /* background-color: #F5A9F2; */
+      }
+      .guestname {
+        width: 80px;
+        height: 89%;
+        /* text-align: center; */
+      }
+      .content {
+        width: 300px;
+        height: 80px;
+        margin: 3px 0px 3px 0px;
+      }
+      .all {
+        width: 100%;
+      }
+      /* .contentform {
+        /* background-color: #F5A9F2; */
+      /* } */
+      /* .mybtn { */
+      /* background-color: #F5A9F2; */
+      /* } */
+    </style>
+    <script>
+      function closebtn() {
+        $("#all").toggle();
+      }
+      function postingbtn() {
+        let guestname = $("#guestname").val();
+        let content = $("#content").val();
+        // console.log(guestname, content);
+        let temp_html = `
+        </div>
+        <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog"
+            id="modalSheet">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content rounded-4 shadow">
+                    <div class="modal-header border-bottom-0">
+                        <h1 class="modal-title fs-5">${guestname}</h1>
+                    </div>
+                    <input type="text" id="writer" placeholder="작성자">
+                    <textarea id="writing" rows="4" cols="80" placeholder="내용을 넣어주세용"></textarea><br>
+                    <div class="modal-footer flex-column align-items-stretch w-100 gap-2 pb-3 border-top-0">
+                        <button id="xibal" type="button" class="btn btn-lg btn-primary">${guestname}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="guestname">
+           <p class='guestname' type='text'>${guestname}</p>
+        </div>
+        <div class="contentform">
+           <p class='guestname'>${guestname}</p>
+        </div>
+        
+    `;
+        $("#guestbook").append(temp_html);
+      }
+    </script>
+  </head>
+  <body>
+    <div class="headtitle">
+      <h1 onclick="closebtn()">방명록</h1>
+    </div>
+    <div class="all" id="all">
+      <div class="guestbook" id="guestbook">
+        <div class="guestname">
+          <input
+            type="text"
+            class="guestname"
+            id="guestname"
+            placeholder="작성자"
+          />
+          <label for="floatingInput"></label>
+        </div>
+        <div class="contentform">
+          <input type="text" class="content" id="content" placeholder="내용" />
+          <label for="floatingInput"></label>
+          <div class="mybtn">
+            <button onclick="postingbtn()" type="button" class="btn btn-dark">
+              기록하기
+            </button>
+            <button
+              onclick="closebtn()"
+              type="button"
+              class="btn btn-outline-dark"
+            >
+              닫기
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
