@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap");
+
+      * {
+        font-family: "Gowun Dodum", sans-serif;
+        background-color: gainsboro;
+      }
+
+      .aroundbox {
+        width: 40%;
+        padding: 20px;
+        box-shadow: 0px 0px 5px 0px black;
+        border-radius: 5px;
+        /* background-color: #f5a9f2; */
+      }
+
+      .guestname {
+        width: 60%;
+        height: 89%;
+        /* text-align: center; */
+      }
+      .content {
+        width: 300px;
+        height: 80px;
+        margin: 3px 0px 3px 0px;
+      }
+      .all {
+        width: 100%;
+      }
+      /* .contentform {
+        /* background-color: #f5a9f2; */
+      /* } */
+      /* .mybtn { */
+      /* background-color: #f5a9f2; */
+      /* } */
+    </style>
+    <script>
+      function closebtn() {
+        $("#all").toggle();
+      }
+
+      function postingbtn() {
+        let guestname = $("#guestname").val();
+        let content = $("#content").val();
+
+        let temp_html = `
+        <div class='aroundbox'>
+        <div class="guestname">
+           <p class='guestname' type='text'>작성자:${guestname}</p>        
+        </div>
+        <div class="contentform">
+           <p class='guestname'> 내용:${content}</p>
+        </div>     
+        </div>
+    `;
+
+        $("#all").append(temp_html);
+
+        // 입력 필드 초기화
+        $("#guestname").val("");
+        $("#content").val("");
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="headtitle">
+      <h1 onclick="closebtn()">방명록</h1>
+    </div>
+    <div class="all" id="all">
+      <div class="aroundbox" id="aroundbox">
+        <div class="guestbook" id="guestbook">
+          <div class="guestname">
+            <input
+              type="text"
+              class="guestname"
+              id="guestname"
+              placeholder="작성자"
+            />
+            <label for="floatingInput"></label>
+          </div>
+          <div class="contentform">
+            <input
+              type="text"
+              class="content"
+              id="content"
+              placeholder="내용"
+            />
+            <label for="floatingInput"></label>
+            <div class="mybtn">
+              <button onclick="postingbtn()" type="button" class="btn btn-dark">
+                기록하기
+              </button>
+              <button
+                onclick="closebtn()"
+                type="button"
+                class="btn btn-outline-dark"
+              >
+                닫기
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

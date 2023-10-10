@@ -1,0 +1,33 @@
+function postingbtn() { const guestName =
+document.getElementById("guestname").value; const content =
+document.getElementById("content").value; if (guestName && content) { // 입력된
+내용을 목록에 추가 const memoList = document.getElementById("memoList"); const
+listItem = document.createElement("li"); listItem.innerHTML = `
+<div>
+  ${guestName}:
+
+  <div class="guestbook">
+    <div class="guestname">
+      <input
+        type="text"
+        class="guestname"
+        id="guestname"
+        placeholder="작성자"
+      />
+      <label for="floatingInput"></label>
+    </div>
+    <div class="contentform">
+      <input type="text" class="content" id="content" placeholder="내용" />
+      <label for="floatingInput"></label>
+      <div class="mybtn">
+        <button onclick="postingbtn()" type="button" class="btn btn-dark">
+          기록하기
+        </button>
+        <button onclick="closebtn()" type="button" class="btn btn-outline-dark">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+  ${content}`; memoList.appendChild(listItem);
+</div>
